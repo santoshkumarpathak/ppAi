@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { NewfuctionComponent } from './newfuction/newfuction.component'
+
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   {
-    path: "home", component: HomeComponent, data: { breadcrumb: 'Users' },
+    path: 'home', component: HomeComponent
   },
   {
-    path: '**', redirectTo: 'home'
-  }, {
-    path: "newfunction", component: NewfuctionComponent, data: { breadcrumb: 'Users' },
+    path: 'navbar', component:NavbarComponent
+  },
+  {
+    path: 'newfunction', component: NewfuctionComponent
   }
 
 ];
